@@ -5,8 +5,8 @@ public class HeroMain {
         String name = "Thor";
         double health = 100;
         double maxHealth = 100;
-        int level = 10;
-        int exp = 4000;
+        int level = 1;
+        int exp = 6000;
         int money = 156;
         boolean isAlive = true;
         String classType = "Mage";
@@ -25,6 +25,22 @@ public class HeroMain {
         System.out.println("Inventory (" + inventory.length + " items):");
         for (String item : inventory) {
             System.out.println("- " + item);
+        }
+
+        if (exp >= 1000 * level) {
+            System.out.println("=== STATUS ===");
+            System.out.println("Ready to level up!");
+        }
+
+        System.out.println("=== COMBAT ===");
+        double damage = 10;
+        System.out.println(name + " takes " + damage + " damage!");
+        health -= damage;
+        System.out.println("Health is now: " + health + "/" + maxHealth);
+        if (health > 0) {
+            System.out.println(name + " is still alive");
+        } else {
+            System.out.println(name + " is dead");
         }
     }
 }
